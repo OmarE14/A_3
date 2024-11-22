@@ -87,10 +87,9 @@ router.post('/edit/:id',async(req,res,next)=>{
         let updatedBook = Book({
             "_id":id,
             "Name":req.body.Name,
-            "Author":req.body.Author,
-            "Published":req.body.Published,
-            "Description":req.body.Description,
-            "Price":req.body.Price
+            "PhoneNumber":req.body.PhoneNumber,
+            "Email":req.body.Email,
+            "Notes":req.body.Notes
         });
         Book.findByIdAndUpdate(id,updatedBook).then(()=>{
             res.redirect('/bookslist')
