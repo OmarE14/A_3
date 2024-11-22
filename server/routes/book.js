@@ -46,10 +46,9 @@ router.post('/add',async(req,res,next)=>{
     try{
         let newBook = Book({
             "Name":req.body.Name,
-            "Author":req.body.Author,
-            "Published":req.body.Published,
-            "Description":req.body.Description,
-            "Price":req.body.Price
+            "PhoneNumber":req.body.PhoneNumber,
+            "Email":req.body.Email,
+            "Notes":req.body.Notes
         });
         Book.create(newBook).then(()=>{
             res.redirect('/bookslist');
