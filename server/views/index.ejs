@@ -2,5 +2,16 @@
 <%- include Partials/main_nav.ejs%>
     <!--Main content-->
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+
+    <% if (title=="Home") { %>
+
+        <img id="splash-logo" src="\Assets\images\NeverLoseURconnections_logo.png">
+
+        
+
+    <% } %>    
+
+
+    
 <%- include Partials/footer.ejs%>
