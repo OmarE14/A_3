@@ -16,7 +16,7 @@ router.get('/',async(req,res,next)=>{
 try{
     const BookList = await Book.find();
     res.render('Book/list',{
-        title:'Books',
+        title:'My Contacts',
         BookList:BookList
     })}
     catch(err){

@@ -4,7 +4,7 @@
 <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-10">
-            <h1><%= title %></h1>
+            <h1>My Contacts</h1>
             <br>
             <a href="/bookslist/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add Contact
@@ -13,14 +13,14 @@
                 <tr class="d-flex">
                     <th class="text-center col-2">Name</th>
                     <th class="text-center col-2">Phone Number</th>
-                    <th class="text-center col-1">Email</th>
+                    <th class="text-center col-2">Email</th>
                     <th class="col-4">Notes</th>
                 </tr>
                 <% for(let count=0;count<BookList.length;count++) { %>
                 <tr class="d-flex">
                     <td class="text-center col-2"><%= BookList[count].Name %></td>
                     <td class="text-center col-2"><%= BookList[count].PhoneNumber %></td>
-                    <td class="text-center col-1"><%=BookList[count].Email%></td>
+                    <td class="text-center col-2"><%=BookList[count].Email%></td>
                     <td class="col-4"><%= BookList[count].Notes %> </td>
                     <td class="text-center col-1">
                         <a href="/bookslist/edit/<%= BookList[count]._id%>"
