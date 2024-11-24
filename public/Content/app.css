@@ -142,3 +142,20 @@ footer {
     margin-top: 5px;
   }
 
+
+  @media screen and (max-width: 480px) {
+
+    splash img {
+
+        max-width: 200px;
+        width: 100%; 
+        height: 300px; 
+    }
+
+    #splash p {
+        font-size: 1.2rem;
+        margin-bottom: 1em;
+        
+    }
+    
+  }
