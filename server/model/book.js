@@ -1,4 +1,5 @@
-//const { Collection, default: mongoose } = require("mongoose");
+
+// mongoose schema is made and model is also made to manage the collection in mongo
 
 const mongoose = require("mongoose");
 

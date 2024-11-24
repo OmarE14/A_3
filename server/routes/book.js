@@ -1,17 +1,18 @@
 var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
-// telling my router that I have this model
+
 let Book = require('../model/book');
 const book = require('../model/book');
 let bookController = require('../controllers/book.js')
-/* Get route for the book list - Read Operation */
-/*
-GET,
-Post,
-Put --> Edit/Update
+
+
+
+/* the codes here import the contacts collection, guides the user to the pages where contacts get added/edited or removed from the mongoose collection 
+    and also view the collection with the new updates to it.  
 */
-/* Read Operation --> Get route for displaying the books list */
+
+
 router.get('/',async(req,res,next)=>{
 try{
     const BookList = await Book.find();
@@ -26,7 +27,12 @@ try{
         })
     }
     });
-/* Create Operation --> Get route for displaying me the Add Page */
+
+
+
+    
+
+
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Book/add',{
@@ -41,7 +47,7 @@ router.get('/add',async(req,res,next)=>{
         })
     }
 });
-/* Create Operation --> Post route for processing the Add Page */
+
 router.post('/add',async(req,res,next)=>{
     try{
         let newBook = Book({
@@ -62,7 +68,7 @@ router.post('/add',async(req,res,next)=>{
         })
     }
 });
-/* Update Operation --> Get route for displaying me the Edit Page */
+
 router.get('/edit/:id',async(req,res,next)=>{
     try{
         const id = req.params.id;
@@ -80,7 +86,7 @@ router.get('/edit/:id',async(req,res,next)=>{
         next(err); // passing the error
     }
 });
-/* Update Operation --> Post route for processing the Edit Page */ 
+
 router.post('/edit/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;
@@ -102,7 +108,7 @@ router.post('/edit/:id',async(req,res,next)=>{
         })
     }
 });
-/* Delete Operation --> Get route to perform Delete Operation */
+
 router.get('/delete/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;

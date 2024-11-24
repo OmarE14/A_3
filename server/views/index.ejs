@@ -1,10 +1,12 @@
 <%- include Partials/header.ejs%>
 <%- include Partials/main_nav.ejs%>
-    <!--Main content-->
-    <h1><%= title %></h1>
+    <!--Index template which will display each on content depending on which page the user is heading to.-->
+    
 
 
     <% if (title=="Home") { %>
+
+    <h1><%= title %></h1>
 
     <div id="splash">
         <img src="\Assets\images\NeverLoseURconnections_logo.png">
@@ -27,7 +29,9 @@
 
 
 
-    <% } else if (title=="About us") { %>
+    <% } if (title=="About us") { %>
+
+    <h1><%= title %></h1>
 
      <p>NeverLoseURConnections is a powerful and intuitive web application designed to help you effortlessly manage and organize your contacts. 
      Whether you're looking to maintain professional networks or stay connected with friends and family, our platform makes it easy to store, update, and access contact information. 
@@ -41,6 +45,58 @@
 
 
     <% } %>    
+
+
+    <%  if (title=="Current Contacts") { %>
+
+
+        <h1><%= title %></h1>
+        
+
+
+<table> 
+
+    <tr>
+
+        <th class="text-center col-2"> Name</th>
+        <th class="text-center col-2"> Phone Number</th>
+        <th class="text-center col-2"> Email</th>
+        <th class="text-center col-7"> Notes </th>
+    
+    </tr>
+
+      <% for(let count = 0; count <BookList.length; count++) { %>
+            <tr>
+                <td class="text-center col-2"><%= BookList[count].Name %></td>
+                <td class="text-center col-2"><%= BookList[count].PhoneNumber %></td>
+                <td class="text-center col-2"><%= BookList[count].Email %></td>
+                <td class="text-center col-7"><%= BookList[count].Notes %></td>
+               
+            
+            </tr>
+    <% } %>
+     
+     
+     
+     
+     
+     
+</table>
+
+
+
+
+
+
+
+
+
+
+
+    <% } %>
+
+
+
 
 
     

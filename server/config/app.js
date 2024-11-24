@@ -1,3 +1,7 @@
+
+
+// Sets up the Express app with routes, MongoDB connection, middleware, and error handling for the project.
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -24,14 +28,7 @@ mongoDB.once('open',()=>{
   console.log("Connected with the MongoDB")
 });
 mongoose.connect(DB.URI,{useNewURIParser:true,useUnifiedTopology:true})
-/* main().catch(err => console.log(err));
 
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/BookLib');
-  //await mongoose.connect('mongodb+srv://ahmedsheikh:Test123@cluster0.0f3pz.mongodb.net/');
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
-}*/
 
 app.use(logger('dev'));
 app.use(express.json());

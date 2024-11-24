@@ -1,4 +1,5 @@
-<!--NavBar-->
+<!--Code for the navbar contains ejs if and else statments to make the navbar responsive  and allow the icons to be glowing when the user 
+clicks on it-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img src="\Assets\images\NeverLoseURconnections_logo.png" alt="web logo"> <span> Never Lose UR Connections </span></a>
@@ -23,13 +24,23 @@
             <% } %>       
               <i class="fa-solid fa-circle-info"></i> AboutUs</a>
           </li>
+           <li class="nav-item">
+            <% if(title== "Current Contacts") { %>
+              <a class="nav-link active" href="/bookslist">
+            <% } else {%>
+              <a class="nav-link" href="/showlist">
+            <% } %>  
+            <i class="fa-solid fa-address-book"></i> MyContacts</a>
+          </li>
+
+
           <li class="nav-item">
             <% if(title== "My Contacts") { %>
               <a class="nav-link active" href="/bookslist">
             <% } else {%>
               <a class="nav-link" href="/bookslist">
             <% } %>  
-            <i class="fa-solid fa-address-book"></i>MyContacts</a>
+           <i class="fa-solid fa-people-roof"></i> Manage My Contacts</a>
           </li>
           
         </ul>
