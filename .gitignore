@@ -1,1 +1,1 @@
-./server/db.js
+./server/config/db.js
